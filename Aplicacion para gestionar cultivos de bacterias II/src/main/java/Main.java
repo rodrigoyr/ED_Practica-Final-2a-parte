@@ -2,7 +2,9 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Main extends JFrame {
-    private JPanel mainPanel;
+    private JMenuBar menuBar;
+    private JMenu menu;
+    private JMenuItem menuItem;
 
     public Main() {
         setTitle("Simulación de Bacterias");
@@ -10,12 +12,52 @@ public class Main extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);  // Center the window
 
-        mainPanel = new JPanel();
-        mainPanel.setLayout(new BorderLayout());
+        menuBar = new JMenuBar();
 
-        // TODO: Add components to the mainPanel
+        // Build the first menu.
+        menu = new JMenu("Archivo");
+        menuBar.add(menu);
 
-        add(mainPanel);
+        // a group of JMenuItems
+        menuItem = new JMenuItem("Abrir experimento");
+        menu.add(menuItem);
+
+        menuItem = new JMenuItem("Crear nuevo experimento");
+        menu.add(menuItem);
+
+        menuItem = new JMenuItem("Guardar experimento");
+        menu.add(menuItem);
+
+        menuItem = new JMenuItem("Guardar como nuevo archivo");
+        menu.add(menuItem);
+
+        // Build second menu in the menu bar.
+        menu = new JMenu("Población");
+        menuBar.add(menu);
+
+        menuItem = new JMenuItem("Añadir nueva población");
+        menu.add(menuItem);
+
+        menuItem = new JMenuItem("Listar poblaciones");
+        menu.add(menuItem);
+
+        menuItem = new JMenuItem("Eliminar población");
+        menu.add(menuItem);
+
+        menuItem = new JMenuItem("Ver detalles de población");
+        menu.add(menuItem);
+
+        // Build third menu in the menu bar.
+        menu = new JMenu("Simulación");
+        menuBar.add(menu);
+
+        menuItem = new JMenuItem("Realizar simulación");
+        menu.add(menuItem);
+
+        menuItem = new JMenuItem("Visualizar simulación");
+        menu.add(menuItem);
+
+        this.setJMenuBar(menuBar);
     }
 
     public static void main(String[] args) {
