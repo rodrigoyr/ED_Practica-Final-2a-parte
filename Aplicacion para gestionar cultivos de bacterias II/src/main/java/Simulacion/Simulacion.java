@@ -15,9 +15,7 @@ public class Simulacion {
     }
 
     public void realizarSimulacion() {
-        // Aquí se realizará la simulación de Montecarlo
-        // Este método deberá ser implementado con la lógica de la simulación
-    }
+
 
     // Métodos adicionales para la simulación
     public void inicializarPlato() {
