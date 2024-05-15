@@ -1,5 +1,6 @@
 import javax.swing.*;
-import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Main extends JFrame {
     private JMenuBar menuBar;
@@ -20,15 +21,35 @@ public class Main extends JFrame {
 
         // a group of JMenuItems
         menuItem = new JMenuItem("Abrir experimento");
+        menuItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // TODO: Implementar la funcionalidad para abrir un experimento
+            }
+        });
         menu.add(menuItem);
 
         menuItem = new JMenuItem("Crear nuevo experimento");
+        menuItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // TODO: Implementar la funcionalidad para crear un nuevo experimento
+            }
+        });
         menu.add(menuItem);
 
         menuItem = new JMenuItem("Guardar experimento");
+        menuItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // TODO: Implementar la funcionalidad para guardar un experimento
+            }
+        });
         menu.add(menuItem);
 
         menuItem = new JMenuItem("Guardar como nuevo archivo");
+        menuItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // TODO: Implementar la funcionalidad para guardar como un nuevo archivo
+            }
+        });
         menu.add(menuItem);
 
         // Build second menu in the menu bar.
@@ -36,15 +57,35 @@ public class Main extends JFrame {
         menuBar.add(menu);
 
         menuItem = new JMenuItem("Añadir nueva población");
+        menuItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // TODO: Implementar la funcionalidad para añadir una nueva población
+            }
+        });
         menu.add(menuItem);
 
         menuItem = new JMenuItem("Listar poblaciones");
+        menuItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // TODO: Implementar la funcionalidad para listar las poblaciones
+            }
+        });
         menu.add(menuItem);
 
         menuItem = new JMenuItem("Eliminar población");
+        menuItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // TODO: Implementar la funcionalidad para eliminar una población
+            }
+        });
         menu.add(menuItem);
 
         menuItem = new JMenuItem("Ver detalles de población");
+        menuItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // TODO: Implementar la funcionalidad para ver los detalles de una población
+            }
+        });
         menu.add(menuItem);
 
         // Build third menu in the menu bar.
@@ -52,9 +93,19 @@ public class Main extends JFrame {
         menuBar.add(menu);
 
         menuItem = new JMenuItem("Realizar simulación");
+        menuItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // TODO: Implementar la funcionalidad para realizar una simulación
+            }
+        });
         menu.add(menuItem);
 
         menuItem = new JMenuItem("Visualizar simulación");
+        menuItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // TODO: Implementar la funcionalidad para visualizar una simulación
+            }
+        });
         menu.add(menuItem);
 
         this.setJMenuBar(menuBar);
