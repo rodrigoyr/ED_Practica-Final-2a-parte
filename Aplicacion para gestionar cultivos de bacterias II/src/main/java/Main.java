@@ -41,28 +41,49 @@ public class Main extends JFrame {
         menuItem = new JMenuItem("Crear nuevo experimento");
         menuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                // TODO: Implementar la funcionalidad para crear un nuevo experimento
-                System.out.println("Crear nuevo experimento seleccionado");
-            }
-        });
+                menuItem = new JMenuItem("Crear nuevo experimento");
+                menuItem.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        InterfazDeUsuario.crearNuevaPoblacion();
+                    }
+                });
+                menu.add(menuItem);
         menu.add(menuItem);
 
         menuItem = new JMenuItem("Guardar experimento");
         menuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                // TODO: Implementar la funcionalidad para guardar un experimento
-                System.out.println("Guardar experimento seleccionado");
-            }
-        });
+                menuItem = new JMenuItem("Guardar experimento");
+                menuItem.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        // Implementar la funcionalidad para guardar un experimento
+                        JFileChooser fileChooser = new JFileChooser();
+                        int returnValue = fileChooser.showSaveDialog(null);
+                        if (returnValue == JFileChooser.APPROVE_OPTION) {
+                            File selectedFile = fileChooser.getSelectedFile();
+                            GestorDeArchivos.guardarExperimento(experimento, selectedFile.getPath());
+                        }
+                    }
+                });
+                menu.add(menuItem);
         menu.add(menuItem);
 
         menuItem = new JMenuItem("Guardar como nuevo archivo");
         menuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                // TODO: Implementar la funcionalidad para guardar como un nuevo archivo
-                System.out.println("Guardar como nuevo archivo seleccionado");
-            }
-        });
+                menuItem = new JMenuItem("Guardar como nuevo archivo");
+                menuItem.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        // Implementar la funcionalidad para guardar como un nuevo archivo
+                        JFileChooser fileChooser = new JFileChooser();
+                        int returnValue = fileChooser.showSaveDialog(null);
+                        if (returnValue == JFileChooser.APPROVE_OPTION) {
+                            File selectedFile = fileChooser.getSelectedFile();
+                            GestorDeArchivos.guardarExperimentoComoNuevoArchivo(experimento, selectedFile.getPath());
+                        }
+                    }
+                });
+                menu.add(menuItem);
         menu.add(menuItem);
 
         // Build second menu in the menu bar.
@@ -72,19 +93,34 @@ public class Main extends JFrame {
         menuItem = new JMenuItem("Añadir nueva población");
         menuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                // TODO: Implementar la funcionalidad para añadir una nueva población
-                System.out.println("Añadir nueva población seleccionado");
-            }
-        });
+                menuItem = new JMenuItem("Añadir nueva población");
+                menuItem.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        InterfazDeUsuario.crearNuevaPoblacion();
+                    }
+                });
+                menu.add(menuItem);
         menu.add(menuItem);
 
         menuItem = new JMenuItem("Listar poblaciones");
+                menuItem = new JMenuItem("Listar poblaciones");
+                menuItem.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        // Implementar la funcionalidad para listar las poblaciones
+                        // Aquí puedes llamar a un método que maneje la lógica de listar las poblaciones
+                        // Por ejemplo: InterfazDeUsuario.listarPoblaciones();
+                    }
+                });
+                menu.add(menuItem);
         menuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                // TODO: Implementar la funcionalidad para listar las poblaciones
-                System.out.println("Listar poblaciones seleccionado");
-            }
-        });
+                menuItem = new JMenuItem("Añadir nueva población");
+                menuItem.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        InterfazDeUsuario.crearNuevaPoblacion();
+                    }
+                });
+                menu.add(menuItem);
         menu.add(menuItem);
 
         menuItem = new JMenuItem("Eliminar población");
