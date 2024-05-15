@@ -7,6 +7,14 @@ public class Plato {
         this.celdas = new int[size][size];
     }
 
+    public int getCelda(int x, int y) {
+        return celdas[x][y];
+    }
+
+    public void reducirComida(int x, int y, int cantidad) {
+        celdas[x][y] -= cantidad;
+    }
+
     public void inicializar() {
         // Implementar la lógica para inicializar el plato
         for (int i = 0; i < celdas.length; i++) {
