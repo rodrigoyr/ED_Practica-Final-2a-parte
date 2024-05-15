@@ -1,12 +1,8 @@
 package Experimento;
 
 import PoblacionDeBacterias.Poblacion;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Comparator;
 
 public class Experimento {
-    private String nombre;
     private Poblacion poblacion;
 
     public Experimento(Poblacion poblacion) {
@@ -17,9 +13,7 @@ public class Experimento {
         return this.poblacion;
     }
 
-    public void agregarPoblacion(Poblacion poblacion) {
+    public void setPoblacion(Poblacion poblacion) {
         this.poblacion = poblacion;
     }
-
-    // Métodos adicionales para guardar y cargar experimentos desde archivos
 }
