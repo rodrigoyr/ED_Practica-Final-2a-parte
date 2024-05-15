@@ -5,50 +5,52 @@ import java.util.Random;
 
 public class Simulacion {
     private Poblacion poblacion;
-    private int[][] plato;
+    private int[][][] plato; // Matriz tridimensional para almacenar el número de bacterias y la comida en cada celda cada día
     private Random random;
 
-    public Simulacion(Poblacion poblacion) {
+    public Simulacion(Poblacion poblacion, int dias) {
         this.poblacion = poblacion;
-        this.plato = new int[20][20];
+        this.plato = new int[dias][20][20]; // Inicializa la matriz tridimensional con el número de días y el tamaño del plato
         this.random = new Random();
         inicializarPlato();
     }
 
     public void realizarSimulacion() {
-        // Aquí se realizará la simulación de Montecarlo
-        for (int i = 0; i < 100; i++) { // Ejecuta la simulación 100 veces
-            actualizarPlato();
+        for (int dia = 0; dia < plato.length; dia++) { // Ejecuta la simulación para cada día
+            for (int i = 0; i < 10; i++) { // Realiza 10 pasos de simulación para cada bacteria cada día
+                actualizarPlato();
+            }
+            finalizarDia();
         }
-        finalizarSimulacion();
     }
 
-    // Métodos adicionales para la simulación
     public void inicializarPlato() {
-        // Inicializa el plato de cultivo con el número inicial de bacterias
-        for (int i = 0; i < poblacion.getNumeroBacteriasIniciales(); i++) {
-            int x = random.nextInt(20);
-            int y = random.nextInt(20);
-            plato[x][y] = 1; // Representa una bacteria
+        // Inicializa el plato de cultivo con el número inicial de bacterias en un subcuadrado de 4x4 en el centro
+        int centro = 20 / 2;
+        for (int i = centro - 2; i <= centro + 2; i++) {
+            for (int j = centro - 2; j <= centro + 2; j++) {
+                plato[0][i][j] = poblacion.getNumeroBacteriasIniciales() / 16; // Reparte las bacterias iniciales entre las celdas del subcuadrado
+            }
         }
     }
 
     public void actualizarPlato() {
         // Actualiza el estado del plato de cultivo después de cada iteración de la simulación
+        // Aquí es donde se implementa la lógica de la simulación de Montecarlo
         // Este es un ejemplo muy básico y probablemente necesitarás una lógica más compleja
-        for (int i = 0; i < 20; i++) {
-            for (int j = 0; j < 20; j++) {
-                if (plato[i][j] == 1 && random.nextBoolean()) { // Si hay una bacteria y se cumple una condición aleatoria
-                    plato[i][j] = 0; // La bacteria muere
-                } else if (plato[i][j] == 0 && random.nextBoolean()) { // Si no hay una bacteria y se cumple una condición aleatoria
-                    plato[i][j] = 1; // Nace una nueva bacteria
+        for (int dia = 0; dia < plato.length; dia++) {
+            for (int i = 0; i < 20; i++) {
+                for (int j = 0; j < 20; j++) {
+                    // Aquí es donde se implementaría la lógica de la simulación de Montecarlo para cada bacteria
+                    // Por ejemplo, podrías generar un número aleatorio y usarlo para determinar si la bacteria se muere, se queda en la celda en la que está o se mueve a una celda contigua
+                    // También necesitarías implementar la lógica para que la bacteria coma comida de la celda y tenga hijos si come suficiente comida
                 }
             }
         }
     }
 
-    public void finalizarSimulacion() {
-        // Finaliza la simulación y realiza cualquier limpieza necesaria
-        // En este caso, no hay nada que limpiar, pero podrías necesitar este método para otras lógicas de simulación
+    public void finalizarDia() {
+        // Finaliza el día y realiza cualquier limpieza necesaria
+        // Por ejemplo, podrías repartir la comida del día siguiente entre todas las celdas del plato
     }
 }
