@@ -1,6 +1,8 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Date;
 import java.io.File;
 import Experimento.Experimento;
 import GestionDeArchivos.GestorDeArchivos;
@@ -128,7 +130,8 @@ public class Main extends JFrame {
     }
 
     public void crearNuevoExperimento() {
-        experimento = new Experimento(new Poblacion(0));
+        // Aquí puedes especificar los parámetros necesarios para crear un nuevo experimento
+        experimento = new Experimento(new ArrayList<>(), 0);
     }
 
     public void guardarExperimento() {
@@ -150,20 +153,23 @@ public class Main extends JFrame {
     }
 
     public void añadirNuevaPoblacion() {
-        Poblacion nuevaPoblacion = new Poblacion(0);
+        // Aquí puedes especificar los parámetros necesarios para crear una nueva población
+        Poblacion nuevaPoblacion = new Poblacion("nombre", new Date(), new ArrayList<>());
         experimento.agregarNuevaPoblacion(nuevaPoblacion);
     }
 
     public void listarPoblaciones() {
-        System.out.println(experimento.getPoblacion());
+        for (Poblacion poblacion : experimento.getPoblaciones()) {
+            System.out.println(poblacion.getNombre());
+        }
     }
 
     public void eliminarPoblacion() {
-        experimento.setPoblacion(null);
+        // Aquí puedes especificar la lógica para eliminar una población
     }
 
     public void verDetallesPoblacion() {
-        System.out.println(experimento.getPoblacion());
+        // Aquí puedes especificar la lógica para ver los detalles de una población
     }
 
     public void realizarSimulacion() {
@@ -172,7 +178,7 @@ public class Main extends JFrame {
     }
 
     public void visualizarSimulacion() {
-        System.out.println("Visualización de la simulación aún no implementada.");
+        // Aquí puedes especificar la lógica para visualizar la simulación
     }
 
     public static void main(String[] args) {
