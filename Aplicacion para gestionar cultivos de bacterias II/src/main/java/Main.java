@@ -4,18 +4,19 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import Experimento.Experimento;
 import GestionDeArchivos.GestorDeArchivos;
+import PoblacionDeBacterias.Poblacion;
 
 public class Main extends JFrame {
     private JMenuBar menuBar;
     private JMenu menu;
     private JMenuItem menuItem;
-    private Experimento experimento;  // Define experimento here
+    private Experimento experimento;
 
     public Main() {
         setTitle("Simulación de Bacterias");
         setSize(800, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);  // Center the window
+        setLocationRelativeTo(null);
 
         menuBar = new JMenuBar();
 
@@ -27,12 +28,7 @@ public class Main extends JFrame {
         menuItem = new JMenuItem("Abrir experimento");
         menuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                JFileChooser fileChooser = new JFileChooser();
-                int returnValue = fileChooser.showOpenDialog(null);
-                if (returnValue == JFileChooser.APPROVE_OPTION) {
-                    File selectedFile = fileChooser.getSelectedFile();
-                    experimento = GestorDeArchivos.cargarExperimento(selectedFile.getPath());
-                }
+                abrirExperimento();
             }
         });
         menu.add(menuItem);
@@ -40,7 +36,7 @@ public class Main extends JFrame {
         menuItem = new JMenuItem("Crear nuevo experimento");
         menuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                crearNuevaPoblacion();
+                crearNuevoExperimento();
             }
         });
         menu.add(menuItem);
@@ -48,12 +44,7 @@ public class Main extends JFrame {
         menuItem = new JMenuItem("Guardar experimento");
         menuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                JFileChooser fileChooser = new JFileChooser();
-                int returnValue = fileChooser.showSaveDialog(null);
-                if (returnValue == JFileChooser.APPROVE_OPTION) {
-                    File selectedFile = fileChooser.getSelectedFile();
-                    GestorDeArchivos.guardarExperimento(experimento, selectedFile.getPath());
-                }
+                guardarExperimento();
             }
         });
         menu.add(menuItem);
@@ -61,12 +52,7 @@ public class Main extends JFrame {
         menuItem = new JMenuItem("Guardar como nuevo archivo");
         menuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                JFileChooser fileChooser = new JFileChooser();
-                int returnValue = fileChooser.showSaveDialog(null);
-                if (returnValue == JFileChooser.APPROVE_OPTION) {
-                    File selectedFile = fileChooser.getSelectedFile();
-                    GestorDeArchivos.guardarExperimentoComoNuevoArchivo(experimento, selectedFile.getPath());
-                }
+                guardarComoNuevoArchivo();
             }
         });
         menu.add(menuItem);
@@ -78,7 +64,7 @@ public class Main extends JFrame {
         menuItem = new JMenuItem("Añadir nueva población");
         menuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                crearNuevaPoblacion();
+                añadirNuevaPoblacion();
             }
         });
         menu.add(menuItem);
@@ -131,28 +117,87 @@ public class Main extends JFrame {
     }
 
     // Define the methods here
-    public void crearNuevaPoblacion() {
-        // Implement the logic here
+    public void abrirExperimento() {
+        JFileChooser fileChooser = new JFileChooser();
+        int returnValue = fileChooser.showOpenDialog(null);
+        if (returnValue == JFileChooser.APPROVE_OPTION) {
+            File selectedFile = fileChooser.getSelectedFile();
+            experimento = GestorDeArchivos.cargarExperimento(selectedFile.getPath());
+        }
+    }
+
+    public void crearNuevoExperimento() {
+        experimento = new Experimento(new Poblacion(0));
+    }
+
+    public void guardarExperimento() {
+        JFileChooser fileChooser = new JFileChooser();
+        int returnValue = fileChooser.showSaveDialog(null);
+        if (returnValue == JFileChooser.APPROVE_OPTION) {
+            File selectedFile = fileChooser.getSelectedFile();
+            GestorDeArchivos.guardarExperimento(experimento, selectedFile.getPath());
+        }
+    }
+
+    public void guardarComoNuevoArchivo() {
+        JFileChooser fileChooser = new JFileChooser();
+        int returnValue = fileChooser.showSaveDialog(null);
+        if (returnValue == JFileChooser.APPROVE_OPTION) {
+            File selectedFile = fileChooser.getSelectedFile();
+            GestorDeArchivos.guardarExperimentoComoNuevoArchivo(experimento, selectedFile.getPath());
+        }
+    }
+
+    public void añadirNuevaPoblacion() {
+        Poblacion nuevaPoblacion = new Poblacion(0);
+        experimento.agregarNuevaPoblacion(nuevaPoblacion);
     }
 
     public void listarPoblaciones() {
-        // Implement the logic here
+        System.out.println(experimento.getPoblacion());
     }
 
     public void eliminarPoblacion() {
-        // Implement the logic here
+        experimento.setPoblacion(null);
     }
 
     public void verDetallesPoblacion() {
-        // Implement the logic here
+        System.out.println(experimento.getPoblacion());
     }
 
     public void realizarSimulacion() {
-        // Implement the logic here
+        // Definir el número de iteraciones para la simulación de Montecarlo
+        int numIteraciones = 1000;
+
+        // Definir el número inicial de bacterias
+        int numBacteriasIniciales = experimento.getPoblacion().getNumeroBacteriasIniciales();
+
+        // Definir el número final de bacterias, que inicialmente es el mismo que el número inicial de bacterias
+        int numBacteriasFinales = numBacteriasIniciales;
+
+        // Realizar la simulación de Montecarlo
+        for (int i = 0; i < numIteraciones; i++) {
+            // En cada iteración, simular el crecimiento de las bacterias
+            // Aquí estamos asumiendo que cada bacteria tiene una probabilidad del 50% de dividirse en cada iteración
+            // Esto es solo un ejemplo y probablemente querrás reemplazarlo con tu propio modelo de crecimiento de bacterias
+            int numNuevasBacterias = 0;
+            for (int j = 0; j < numBacteriasFinales; j++) {
+                if (Math.random() < 0.5) {
+                    numNuevasBacterias++;
+                }
+            }
+
+            // Añadir las nuevas bacterias al número final de bacterias
+            numBacteriasFinales += numNuevasBacterias;
+        }
+
+        // Imprimir el número final de bacterias
+        System.out.println("Número final de bacterias: " + numBacteriasFinales);
     }
 
     public void visualizarSimulacion() {
-        // Implement the logic here
+        // Aquí puedes implementar la lógica para visualizar una simulación
+        // Esto podría implicar mostrar alguna representación gráfica de los resultados de la simulación
     }
 
     public static void main(String[] args) {
