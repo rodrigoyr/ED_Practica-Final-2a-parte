@@ -15,7 +15,8 @@ public class Simulacion {
     }
 
     public void realizarSimulacion() {
-
+        // Aquí se realizará la simulación de Montecarlo
+    }
 
     // Métodos adicionales para la simulación
     public void inicializarPlato() {
