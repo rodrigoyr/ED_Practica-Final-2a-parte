@@ -31,7 +31,7 @@ public class Experimento {
     }
 
     public void ordenarPoblacionesPorNumeroDeBacterias() {
-        this.poblaciones.sort(Comparator.comparing(Poblacion::getNumeroDeBacterias));
+        this.poblaciones.sort(Comparator.comparing(Poblacion::getNumeroBacteriasIniciales));
     }
 
     // Métodos adicionales para guardar y cargar experimentos desde archivos
