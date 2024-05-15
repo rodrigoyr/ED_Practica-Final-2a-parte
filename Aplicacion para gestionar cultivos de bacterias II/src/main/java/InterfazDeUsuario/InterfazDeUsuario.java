@@ -44,14 +44,54 @@ public class InterfazDeUsuario {
     }
 
     private void crearNuevaPoblacion() {
-        // Implementa la lógica para crear una nueva población
+        // Solicita al usuario los detalles de la nueva población
+        System.out.println("Introduce el número de bacterias iniciales:");
+        int numeroBacteriasIniciales = scanner.nextInt();
+        scanner.nextLine();  // Consume newline left-over
+
+        // Crea una nueva población y la guarda en un archivo
+        Poblacion nuevaPoblacion = new Poblacion(numeroBacteriasIniciales);
+        GestorDeArchivos.guardarExperimento(new Experimento(nuevaPoblacion), "nuevaPoblacion.ser");
+
+        System.out.println("Nueva población creada y guardada con éxito.");
     }
 
     private void cargarPoblacionExistente() {
-        // Implementa la lógica para cargar una población existente
+        // Solicita al usuario la ruta del archivo de la población existente
+        System.out.println("Introduce la ruta del archivo de la población existente:");
+        String rutaArchivo = scanner.nextLine();
+
+        // Carga la población existente del archivo
+        Experimento experimento = GestorDeArchivos.cargarExperimento(rutaArchivo);
+
+        if (experimento != null) {
+            System.out.println("Población cargada con éxito.");
+        } else {
+            System.out.println("No se pudo cargar la población. Por favor, verifica la ruta del archivo e intenta de nuevo.");
+        }
     }
 
     private void realizarSimulacion() {
-        // Implementa la lógica para realizar la simulación
+        // Solicita al usuario la ruta del archivo de la población para la simulación
+        System.out.println("Introduce la ruta del archivo de la población para la simulación:");
+        String rutaArchivo = scanner.nextLine();
+
+        // Carga la población del archivo
+        Experimento experimento = GestorDeArchivos.cargarExperimento(rutaArchivo);
+
+        if (experimento != null) {
+            // Solicita al usuario el número de días para la simulación
+            System.out.println("Introduce el número de días para la simulación:");
+            int dias = scanner.nextInt();
+            scanner.nextLine();  // Consume newline left-over
+
+            // Realiza la simulación
+            Simulacion simulacion = new Simulacion(experimento.getPoblacion(), dias);
+            simulacion.realizarSimulacion();
+
+            System.out.println("Simulación realizada con éxito.");
+        } else {
+            System.out.println("No se pudo cargar la población. Por favor, verifica la ruta del archivo e intenta de nuevo.");
+        }
     }
 }
