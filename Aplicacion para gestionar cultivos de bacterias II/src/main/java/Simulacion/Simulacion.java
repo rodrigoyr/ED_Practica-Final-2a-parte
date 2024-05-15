@@ -20,5 +20,15 @@ public class Simulacion {
     }
 
     // Métodos adicionales para la simulación
-    // ...
+    public void inicializarPlato() {
+        // Inicializa el plato de cultivo
+    }
+
+    public void actualizarPlato() {
+        // Actualiza el estado del plato de cultivo después de cada iteración de la simulación
+    }
+
+    public void finalizarSimulacion() {
+        // Finaliza la simulación y realiza cualquier limpieza necesaria
+    }
 }
