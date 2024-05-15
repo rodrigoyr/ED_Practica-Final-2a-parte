@@ -1,5 +1,7 @@
 # ED_Practica-Final-2a-parte
-**Rodrigo Yepes Rubio**
+
+### Rodrigo Yepes Rubio
+**A continuación procedo a documentar el trabajo realizado como dicta el enunciado de esta práctica:**
 ## Análisis y descripción de la aplicación. Este análisis y descripción dará respuesta a las siguientes preguntas:
 ### Cómo se han organizado y estructurado las clases y cuál es la responsabilidad de cada una.
 
