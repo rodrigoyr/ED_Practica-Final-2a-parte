@@ -1,22 +1,26 @@
 package PoblacionDeBacterias;
 
+import Experimento.Bacteria;
+
+import java.util.Date;
+import java.util.List;
+
 public class Poblacion {
-    private int numeroBacteriasIniciales;
+    private String nombre;
+    private Date fechaInicio;
+    private List<Bacteria> bacterias;
 
-    public Poblacion(int numeroBacteriasIniciales) {
-        this.numeroBacteriasIniciales = numeroBacteriasIniciales;
+    // Tus otros métodos aquí...
+
+    public Date getFechaInicio() {
+        return fechaInicio;
     }
 
-    public int getNumeroBacteriasIniciales() {
-        return this.numeroBacteriasIniciales;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNumeroBacteriasIniciales(int numeroBacteriasIniciales) {
-        this.numeroBacteriasIniciales = numeroBacteriasIniciales;
-    }
-
-    // Método adicional para agregar bacterias
-    public void agregarBacterias(int numeroBacterias) {
-        this.numeroBacteriasIniciales += numeroBacterias;
+    public List<Bacteria> getBacterias() {
+        return bacterias;
     }
 }
