@@ -24,6 +24,7 @@ public class Main extends JFrame {
         menuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 // TODO: Implementar la funcionalidad para abrir un experimento
+                System.out.println("Abrir experimento seleccionado");
             }
         });
         menu.add(menuItem);
@@ -32,6 +33,7 @@ public class Main extends JFrame {
         menuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 // TODO: Implementar la funcionalidad para crear un nuevo experimento
+                System.out.println("Crear nuevo experimento seleccionado");
             }
         });
         menu.add(menuItem);
@@ -40,6 +42,7 @@ public class Main extends JFrame {
         menuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 // TODO: Implementar la funcionalidad para guardar un experimento
+                System.out.println("Guardar experimento seleccionado");
             }
         });
         menu.add(menuItem);
@@ -48,6 +51,7 @@ public class Main extends JFrame {
         menuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 // TODO: Implementar la funcionalidad para guardar como un nuevo archivo
+                System.out.println("Guardar como nuevo archivo seleccionado");
             }
         });
         menu.add(menuItem);
@@ -60,6 +64,7 @@ public class Main extends JFrame {
         menuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 // TODO: Implementar la funcionalidad para añadir una nueva población
+                System.out.println("Añadir nueva población seleccionado");
             }
         });
         menu.add(menuItem);
@@ -68,6 +73,7 @@ public class Main extends JFrame {
         menuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 // TODO: Implementar la funcionalidad para listar las poblaciones
+                System.out.println("Listar poblaciones seleccionado");
             }
         });
         menu.add(menuItem);
@@ -76,6 +82,7 @@ public class Main extends JFrame {
         menuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 // TODO: Implementar la funcionalidad para eliminar una población
+                System.out.println("Eliminar población seleccionado");
             }
         });
         menu.add(menuItem);
@@ -84,6 +91,7 @@ public class Main extends JFrame {
         menuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 // TODO: Implementar la funcionalidad para ver los detalles de una población
+                System.out.println("Ver detalles de población seleccionado");
             }
         });
         menu.add(menuItem);
@@ -96,6 +104,7 @@ public class Main extends JFrame {
         menuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 // TODO: Implementar la funcionalidad para realizar una simulación
+                System.out.println("Realizar simulación seleccionado");
             }
         });
         menu.add(menuItem);
@@ -104,6 +113,7 @@ public class Main extends JFrame {
         menuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 // TODO: Implementar la funcionalidad para visualizar una simulación
+                System.out.println("Visualizar simulación seleccionado");
             }
         });
         menu.add(menuItem);
