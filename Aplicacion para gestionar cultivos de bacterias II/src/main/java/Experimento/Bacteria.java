@@ -15,8 +15,19 @@ public class Bacteria {
         this.random = new Random();
     }
 
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
     public void mover() {
         // Implementar la lógica para mover la bacteria
+        // Este es un ejemplo muy básico y probablemente necesitarás una lógica más compleja
+        x += random.nextInt(3) - 1; // Mover la bacteria a una celda contigua en el eje x
+        y += random.nextInt(3) - 1; // Mover la bacteria a una celda contigua en el eje y
     }
 
     public void comer(int comida) {
