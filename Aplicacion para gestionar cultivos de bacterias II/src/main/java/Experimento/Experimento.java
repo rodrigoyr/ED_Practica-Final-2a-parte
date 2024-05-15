@@ -16,4 +16,9 @@ public class Experimento {
     public void setPoblacion(Poblacion poblacion) {
         this.poblacion = poblacion;
     }
+
+    // Método adicional para agregar una nueva población
+    public void agregarNuevaPoblacion(Poblacion nuevaPoblacion) {
+        // Aquí puedes implementar la lógica para agregar una nueva población al experimento
+    }
 }

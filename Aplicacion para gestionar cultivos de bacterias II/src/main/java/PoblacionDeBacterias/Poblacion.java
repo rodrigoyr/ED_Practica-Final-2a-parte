@@ -14,4 +14,9 @@ public class Poblacion {
     public void setNumeroBacteriasIniciales(int numeroBacteriasIniciales) {
         this.numeroBacteriasIniciales = numeroBacteriasIniciales;
     }
+
+    // Método adicional para agregar bacterias
+    public void agregarBacterias(int numeroBacterias) {
+        this.numeroBacteriasIniciales += numeroBacterias;
+    }
 }
