@@ -2,11 +2,14 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import Experimento.Experimento;
+import GestionDeArchivos.GestorDeArchivos;
 
 public class Main extends JFrame {
     private JMenuBar menuBar;
     private JMenu menu;
     private JMenuItem menuItem;
+    private Experimento experimento;  // Define experimento here
 
     public Main() {
         setTitle("Simulación de Bacterias");
@@ -28,7 +31,7 @@ public class Main extends JFrame {
                 int returnValue = fileChooser.showOpenDialog(null);
                 if (returnValue == JFileChooser.APPROVE_OPTION) {
                     File selectedFile = fileChooser.getSelectedFile();
-                    Experimento experimento = GestorDeArchivos.cargarExperimento(selectedFile.getPath());
+                    experimento = GestorDeArchivos.cargarExperimento(selectedFile.getPath());
                 }
             }
         });
@@ -37,7 +40,7 @@ public class Main extends JFrame {
         menuItem = new JMenuItem("Crear nuevo experimento");
         menuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                InterfazDeUsuario.crearNuevaPoblacion();
+                crearNuevaPoblacion();
             }
         });
         menu.add(menuItem);
@@ -75,7 +78,7 @@ public class Main extends JFrame {
         menuItem = new JMenuItem("Añadir nueva población");
         menuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                InterfazDeUsuario.crearNuevaPoblacion();
+                crearNuevaPoblacion();
             }
         });
         menu.add(menuItem);
@@ -83,7 +86,7 @@ public class Main extends JFrame {
         menuItem = new JMenuItem("Listar poblaciones");
         menuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                InterfazDeUsuario.listarPoblaciones();
+                listarPoblaciones();
             }
         });
         menu.add(menuItem);
@@ -91,7 +94,7 @@ public class Main extends JFrame {
         menuItem = new JMenuItem("Eliminar población");
         menuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                InterfazDeUsuario.eliminarPoblacion();
+                eliminarPoblacion();
             }
         });
         menu.add(menuItem);
@@ -99,7 +102,7 @@ public class Main extends JFrame {
         menuItem = new JMenuItem("Ver detalles de población");
         menuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                InterfazDeUsuario.verDetallesPoblacion();
+                verDetallesPoblacion();
             }
         });
         menu.add(menuItem);
@@ -111,7 +114,7 @@ public class Main extends JFrame {
         menuItem = new JMenuItem("Realizar simulación");
         menuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                InterfazDeUsuario.realizarSimulacion();
+                realizarSimulacion();
             }
         });
         menu.add(menuItem);
@@ -119,12 +122,37 @@ public class Main extends JFrame {
         menuItem = new JMenuItem("Visualizar simulación");
         menuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                InterfazDeUsuario.visualizarSimulacion();
+                visualizarSimulacion();
             }
         });
         menu.add(menuItem);
 
         this.setJMenuBar(menuBar);
+    }
+
+    // Define the methods here
+    public void crearNuevaPoblacion() {
+        // Implement the logic here
+    }
+
+    public void listarPoblaciones() {
+        // Implement the logic here
+    }
+
+    public void eliminarPoblacion() {
+        // Implement the logic here
+    }
+
+    public void verDetallesPoblacion() {
+        // Implement the logic here
+    }
+
+    public void realizarSimulacion() {
+        // Implement the logic here
+    }
+
+    public void visualizarSimulacion() {
+        // Implement the logic here
     }
 
     public static void main(String[] args) {

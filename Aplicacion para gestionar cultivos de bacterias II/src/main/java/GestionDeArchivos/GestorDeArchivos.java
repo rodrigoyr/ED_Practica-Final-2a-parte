@@ -47,4 +47,13 @@ public class GestorDeArchivos {
         File file = new File(rutaArchivo);
         return file.delete();
     }
+
+    // Método adicional para guardar el experimento como un nuevo archivo
+    public static void guardarExperimentoComoNuevoArchivo(Experimento experimento, String rutaArchivo) {
+        if (!archivoExiste(rutaArchivo)) {
+            guardarExperimento(experimento, rutaArchivo);
+        } else {
+            System.out.println("El archivo ya existe. Por favor, elige otra ruta o nombre de archivo.");
+        }
+    }
 }
