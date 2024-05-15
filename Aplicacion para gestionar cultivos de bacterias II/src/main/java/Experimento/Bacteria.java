@@ -24,24 +24,24 @@ public class Bacteria {
     }
 
     public void mover() {
-        // Implementar la lógica para mover la bacteria
-        // Este es un ejemplo muy básico y probablemente necesitarás una lógica más compleja
         x += random.nextInt(3) - 1; // Mover la bacteria a una celda contigua en el eje x
         y += random.nextInt(3) - 1; // Mover la bacteria a una celda contigua en el eje y
     }
 
     public void comer(int comida) {
-        // Implementar la lógica para que la bacteria coma
-        this.comidaConsumida += comida;
+        if (comida >= 100) {
+            this.comidaConsumida += 20;
+        } else if (comida > 10) {
+            this.comidaConsumida += 10;
+        }
     }
 
     public int reproducir() {
-        // Implementar la lógica para la reproducción de la bacteria
-        if (comidaConsumida >= 150) {
+        if (comidaConsumida >= 150000) {
             return 3;
-        } else if (comidaConsumida >= 100) {
+        } else if (comidaConsumida >= 100000) {
             return 2;
-        } else if (comidaConsumida >= 50) {
+        } else if (comidaConsumida >= 50000) {
             return 1;
         } else {
             return 0;
