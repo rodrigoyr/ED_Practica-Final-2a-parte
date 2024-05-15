@@ -5,6 +5,7 @@ import java.io.File;
 import Experimento.Experimento;
 import GestionDeArchivos.GestorDeArchivos;
 import PoblacionDeBacterias.Poblacion;
+import Simulacion.Simulacion;
 
 public class Main extends JFrame {
     private JMenuBar menuBar;
@@ -166,21 +167,8 @@ public class Main extends JFrame {
     }
 
     public void realizarSimulacion() {
-        int numIteraciones = 1000;
-        int numBacteriasIniciales = experimento.getPoblacion().getNumeroBacteriasIniciales();
-        int numBacteriasFinales = numBacteriasIniciales;
-
-        for (int i = 0; i < numIteraciones; i++) {
-            int numNuevasBacterias = 0;
-            for (int j = 0; j < numBacteriasFinales; j++) {
-                if (Math.random() < 0.5) {
-                    numNuevasBacterias++;
-                }
-            }
-            numBacteriasFinales += numNuevasBacterias;
-        }
-
-        System.out.println("Número final de bacterias: " + numBacteriasFinales);
+        Simulacion simulacion = new Simulacion();
+        simulacion.realizarSimulacionDiaria();
     }
 
     public void visualizarSimulacion() {
