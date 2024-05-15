@@ -23,10 +23,19 @@ public class Main extends JFrame {
         menuItem = new JMenuItem("Abrir experimento");
         menuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                // TODO: Implementar la funcionalidad para abrir un experimento
-                System.out.println("Abrir experimento seleccionado");
-            }
-        });
+                menuItem = new JMenuItem("Abrir experimento");
+                menuItem.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        // Implementar la funcionalidad para abrir un experimento
+                        JFileChooser fileChooser = new JFileChooser();
+                        int returnValue = fileChooser.showOpenDialog(null);
+                        if (returnValue == JFileChooser.APPROVE_OPTION) {
+                            File selectedFile = fileChooser.getSelectedFile();
+                            Experimento experimento = GestorDeArchivos.cargarExperimento(selectedFile.getPath());
+                        }
+                    }
+                });
+                menu.add(menuItem);
         menu.add(menuItem);
 
         menuItem = new JMenuItem("Crear nuevo experimento");
