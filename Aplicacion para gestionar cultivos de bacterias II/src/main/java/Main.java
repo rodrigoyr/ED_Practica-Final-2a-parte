@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -9,7 +10,6 @@ import GestionDeArchivos.GestorDeArchivos;
 import PoblacionDeBacterias.Poblacion;
 import Simulacion.Simulacion;
 import Experimento.Bacteria;
-
 import java.util.List;
 
 public class Main extends JFrame {
@@ -24,6 +24,9 @@ public class Main extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
+        // Cambiar el color de fondo de la ventana
+        getContentPane().setBackground(new Color(144, 238, 144)); // Color verde claro
+
         menuBar = new JMenuBar();
 
         // Build the first menu.
@@ -37,6 +40,7 @@ public class Main extends JFrame {
                 abrirExperimento();
             }
         });
+        menuItem.setFont(new Font("Arial", Font.BOLD, 14)); // Hacer el texto del botón más grande
         menu.add(menuItem);
 
         menuItem = new JMenuItem("Crear nuevo experimento");
@@ -45,6 +49,7 @@ public class Main extends JFrame {
                 crearNuevoExperimento();
             }
         });
+        menuItem.setFont(new Font("Arial", Font.BOLD, 14));
         menu.add(menuItem);
 
         menuItem = new JMenuItem("Guardar experimento");
@@ -53,6 +58,7 @@ public class Main extends JFrame {
                 guardarExperimento();
             }
         });
+        menuItem.setFont(new Font("Arial", Font.BOLD, 14));
         menu.add(menuItem);
 
         menuItem = new JMenuItem("Guardar como nuevo archivo");
@@ -61,6 +67,7 @@ public class Main extends JFrame {
                 guardarComoNuevoArchivo();
             }
         });
+        menuItem.setFont(new Font("Arial", Font.BOLD, 14));
         menu.add(menuItem);
 
         // Build second menu in the menu bar.
@@ -73,6 +80,7 @@ public class Main extends JFrame {
                 añadirNuevaPoblacion();
             }
         });
+        menuItem.setFont(new Font("Arial", Font.BOLD, 14));
         menu.add(menuItem);
 
         menuItem = new JMenuItem("Listar poblaciones");
@@ -81,6 +89,7 @@ public class Main extends JFrame {
                 listarPoblaciones();
             }
         });
+        menuItem.setFont(new Font("Arial", Font.BOLD, 14));
         menu.add(menuItem);
 
         menuItem = new JMenuItem("Eliminar población");
@@ -89,6 +98,7 @@ public class Main extends JFrame {
                 eliminarPoblacion();
             }
         });
+        menuItem.setFont(new Font("Arial", Font.BOLD, 14));
         menu.add(menuItem);
 
         menuItem = new JMenuItem("Ver detalles de población");
@@ -97,6 +107,7 @@ public class Main extends JFrame {
                 verDetallesPoblacion();
             }
         });
+        menuItem.setFont(new Font("Arial", Font.BOLD, 14));
         menu.add(menuItem);
 
         // Build third menu in the menu bar.
@@ -109,6 +120,7 @@ public class Main extends JFrame {
                 realizarSimulacion();
             }
         });
+        menuItem.setFont(new Font("Arial", Font.BOLD, 14));
         menu.add(menuItem);
 
         menuItem = new JMenuItem("Visualizar simulación");
@@ -117,6 +129,7 @@ public class Main extends JFrame {
                 visualizarSimulacion();
             }
         });
+        menuItem.setFont(new Font("Arial", Font.BOLD, 14));
         menu.add(menuItem);
 
         this.setJMenuBar(menuBar);
