@@ -20,7 +20,14 @@ Las clases en este proyecto siguen la programacion orientada a objetos, trabajan
 
 7. **Plato**: Esta clase representa el entorno en el que las bacterias viven y se mueven. Contiene una matriz, cada una de las cuales tiene una cantidad de comida. También tiene métodos para distribuir comida en diferentes maneras.
 ### Qué decisiones de diseño se han tomado.
+En este proyecto, se han tomado varias decisiones de diseño importantes:
+1. **Orientación a objetos**: El proyecto está orientado a objetos como hemos aprendido en clase. Cada clase representa una entidad distinta como Bacteria, Poblacion, Simulacion, etc. y como he dicho antes trabajan conjuntamente para crear un programa complejo.
 
+2. **Interfaz gráfica de usuario**: Se ha decidido utilizar Swing para construir la interfaz gráfica de usuario, ya que como me han explicado y he notado es la mejor manera de realizarla. La clase Main extiende de JFrame y se encarga de la creación y gestión de la interfaz de usuario.
+
+3. **Uso de bibliotecas estándar de Java**: El proyecto hace uso de varias clases y interfaces de las bibliotecas estándar de Java, como ArrayLis, Date y ActionListener entre otras
+   
+Estas decisiones de diseño ayudan a mantener el código del proyecto organizado, modular y fácil de entender y mantener.
 ### Qué comprobaciones de integridad (y excepciones) se han implementado.
 
 ### Qué estructuras de datos ha utilizado y por qué lo ha hecho.
