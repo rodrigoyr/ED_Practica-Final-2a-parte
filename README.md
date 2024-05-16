@@ -38,6 +38,9 @@ En este proyecto, como he comentado antes se han utilizado las siguientes estruc
 **Array bidimensional**: Se utiliza en la clase Plato para representar las celdas del plato. Los arrays son estructuras de datos eficientes para almacenar y acceder a elementos en posiciones específicas, y un array bidimensional es una elección natural para representar una cuadrícula de celdas.  
 
 ### Qué técnicas de ordenación y búsqueda ha utilizado y por qué lo ha hecho.
+En la clase Simulacion, se recorre la lista de bacterias en el método realizarSimulacionDiaria(). Se están procesando todos los elementos de la lista y buscando un elemento específico.  
+En la clase Main, se recorre la lista de poblaciones en el método listarPoblaciones(). Al igual que en el caso anterior.
+Principalmente he implementado esto en las dos clases principales, en Simulacion ya que lo utilizo para la simulacion de Montecarlo y en el main ya que se necesita procesar y buscar la gran cantida de datos que almacemna el programa.
 
 ### Diagramas de clases UML.
 
