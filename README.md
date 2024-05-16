@@ -43,7 +43,19 @@ En la clase Main, se recorre la lista de poblaciones en el método listarPoblaci
 Principalmente he implementado esto en las dos clases principales, en Simulacion ya que lo utilizo para la simulacion de Montecarlo y en el main ya que se necesita procesar y buscar la gran cantida de datos que almacemna el programa.
 
 ### Diagramas de clases UML.
+Descripción breve de los diagramas de clases UML para las clases:
 
+1. **Main**: Esta es la clase principal que contiene el método main. Tiene varios métodos para manejar las acciones del usuario, como abrir y guardar experimentos, crear y listar poblaciones, y realizar y visualizar simulaciones. También tiene un atributo Experimento.
+
+2. **Experimento**: Esta clase representa un experimento. Tiene una lista de Poblacion y un atributo para el número de días.
+
+3. **Poblacion**: Esta clase representa una población de bacterias. Tiene un nombre, una fecha de inicio y una lista de Bacteria.
+
+4. **Bacteria**: Esta clase representa una bacteria. Tiene atributos para su posición (x , y).
+
+5. **Simulacion**: Esta clase se encarga de realizar la simulación. Tiene un Plato, una lista de Bacteria y un objeto Random para generar numeros aleatorios
+
+6. **Plato**: Esta clase representa el plato en el que se encuentran las bacterias. Tiene un array bidimensional como he dicho antes para representar las celdas del plato
 
 ## Listado de fallos conocidos y funcionalidades definidas en el enunciado que no se han implementado en el código entregado.
 ### Listado de todo el código fuente de la aplicación organizado por paquetes (si aplica) y clases.
