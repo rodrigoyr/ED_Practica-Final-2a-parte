@@ -32,6 +32,10 @@ En este proyecto, se han tomado varias decisiones de diseño importantes:
 En este aspecto mi proyecto está un poco excaso, sobre todo en las clases secuendarias que ayudan a la clase principal Main a actuar correctamente. Lo que he hecho ha sido tratar de implementar correctamente todas las clases en el Main, y los errores y exepciones añadirlas aquí, como puede comprobar cuando ocurre un error se muestra un cuadro de dialogo el usuario donde le permite cerrar dicha pestaña y seguir hacienfo uso del programa sin problema. Todo esto lo he añadido en la clase principal main.
 
 ### Qué estructuras de datos ha utilizado y por qué lo ha hecho.
+En este proyecto, como he comentado antes se han utilizado las siguientes estructuras de datos:  
+**ArrayList**: Se utiliza en varias partes del código, como en la clase Simulacion para almacenar las bacterias y en la clase Experimento para almacenar las poblaciones. ArrayList es una implementación de la interfaz List que permite almacenar elementos. Se ha elegido por su eficiencia en la inserción y eliminación de elementos al final de la lista, así como por su capacidad para acceder a elementos.
+**List**: Se utiliza en la clase Poblacion para almacenar las bacterias de una población. List es una interfaz en Java que representa una colección ordenada de elementos. Se ha elegido por su flexibilidad y porque proporciona métodos útiles para usar colecciones de elementos.  
+**Array bidimensional**: Se utiliza en la clase Plato para representar las celdas del plato. Los arrays son estructuras de datos eficientes para almacenar y acceder a elementos en posiciones específicas, y un array bidimensional es una elección natural para representar una cuadrícula de celdas.  
 
 ### Qué técnicas de ordenación y búsqueda ha utilizado y por qué lo ha hecho.
 
